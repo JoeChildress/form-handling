@@ -1,15 +1,67 @@
-const errorMessages = {
-    firstName : "Please enter a first name.",
-    lastName : "Please enter a last name.",
-    email : "Please enter a valid email address.",
-};
+//Fields
+const firstName = document.getElementById('firstName'),
+    lastName = document.getElementById('lastName'),
+    password = document.getElementById('password'),
+    confirmPassword = document.getElementById('confirmPassword'),
+    email = document.getElementById('email');
 
-const form = document.querySelector('form');
-console.log(form.elements);  
+//Form
+const form = document.getElementById('signIn');
 
-form.onsubmit = (event) =>{
-    event.preventDefault();
-    console.log('fist name: ', form.elements.firstName.value.trim());
-    console.log('last name: ', form.elements.lastName.value.trim());
-    console.log('email: ', form.elements.email.value.trim());
-  }
+//Custom Colors
+const green = "#4caf50",
+    red = "#f44336";
+
+//Validation
+function validateFirstName(){
+    //check if form is empty = return
+    if (checkIfEmpty(firstName)) return;
+    if (!checkIfOnlyLetters(firstName)) return;
+    return;
+}
+
+function validateLastName(){
+    //check if form is empty = return
+    if (checkIfEmpty(lastName)) return;
+    if (!checkIfOnlyLetters(lastName)) return;
+    return;
+}
+
+function checkIfEmpty(field){
+    if (isEmpty(field.value.trim())){
+        // set field invalid
+        setInvalid(field,`${field.name} must not be empty`);
+        return true;
+    } else { 
+        //set field to valid
+        setValid(field)
+        return false 
+    }
+}
+
+function isEmpty(val){
+    if (val === "") return true;
+    return false;
+}
+
+function setInvalid(field,message){
+    field.className = "invalid";
+    field.nextElementSibling.innerHTML = message;;
+    field.nextElementSibling.style.color = red;
+}
+
+function setValid(field){
+    field.className = "valid";
+    field.nextElementSibling.innerHTML = "";
+    field.nextElementSibling.style.color = green;
+}
+
+function checkIfOnlyLetters(field){
+    if (/^[a-zA-Z ]+$/.test(field.value)){
+        setValid(field);
+        return true;
+    } else {
+        setInvalid(field,`${field.name} must contain only letters.`);
+        return false;
+    }
+}
