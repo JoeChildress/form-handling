@@ -20,12 +20,27 @@ function validateFirstName(){
     return;
 }
 
+firstName.addEventListener('blur', validateFirstName)
+
 function validateLastName(){
     //check if form is empty = return
     if (checkIfEmpty(lastName)) return;
     if (!checkIfOnlyLetters(lastName)) return;
     return;
 }
+
+lastName.addEventListener('blur', validateLastName);
+
+//*** COMPLETE THIS ***/
+function validatePassword(){
+    //check if form is empty = return
+    if (checkIfEmpty(password)) return;
+    //if () return;
+    return;
+}
+
+lastName.addEventListener('blur', validatePassword)
+
 
 function checkIfEmpty(field){
     if (isEmpty(field.value.trim())){
