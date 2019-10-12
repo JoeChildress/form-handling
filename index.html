@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Materialize Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+
+  <title>JS Form Handling</title>
+
+  <style>
+.form-image {
+  width: 100%; 
+  border-radius: 6px; 
+  opacity: 0.85; 
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <div class="row">
+      <form class="col s6" id="signIn">
+
+        <div class="row">
+
+          <div class="col s6 input-field">
+            <label for="firstName">First Name</label>
+            <input type="text" name="First Name" id="firstName" />
+            <span class="helper-text"></span>
+          </div>
+
+          <div class="col s6 input-field">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="Last Name" id="lastName" />
+            <span class="helper-text"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="password">Password</label>
+            <input type="password" name="Password" id="password" />
+            <span class="helper-text"></span>
+          </div>
+
+          <div class="input-field col s6">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="Confirm Password" id="confirmPassword" />
+            <span class="helper-text"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="email">Email</label>
+            <input type="email" name="Email" id="email" />
+            <span class="helper-text"></span>
+          </div>
+        </div>
+        <button type="submit" class="btn waves-affect waves-light">
+          Sign Up
+        </button>
+      </form>
+      <div class="col s6">
+        <img class="form-image"
+          src="https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          alt="kitten" />
+      </div>
+    </div>
+  </div>
+</body>
+<!-- Materialize Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- Form validation -->
+<script src="js/form.js"></script>
+
+</html>
