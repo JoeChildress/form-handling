@@ -46,7 +46,7 @@ form.addEventListener('submit', function (e) {
             text.appendChild(document.createTextNode(`Welcome ${formData.firstName}!`));
             panel.appendChild(text);
             container.replaceChild(panel, loaderDiv);
-            panel.scrollIntoView();
+            panel.scrollIntoView({behavior:"smooth"});
             console.log("Form data:", formData);
         }, 1000);
 
